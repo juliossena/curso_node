@@ -1,0 +1,14 @@
+{
+  "name": "curso_node",
+  "version": "1.0.0",
+  "description": "curso node",
+  "main": "teste.js",
+  "scripts": {
+    "start": "node teste.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

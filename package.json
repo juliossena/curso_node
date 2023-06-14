@@ -5,8 +5,11 @@
   "type": "module",
   "main": "teste.js",
   "scripts": {
-    "dev": "npx nodemon app.js",
-    "start": "node app.js"
+    "dev": "npx nodemon src/app.js",
+    "start": "node app.js",
+    "lint:fix": "npx eslint ./src --ext .js --fix --ignore-path ./.gitignore",
+    "lint:format": "npx prettier --loglevel warn --write \"./**/*.{js,ts}\" ",
+    "lint": "npm run lint:format && npm run lint:fix"
   },
   "author": "",
   "license": "ISC",
@@ -19,6 +22,8 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.2.1",
     "nodemon": "^2.0.22",
+    "pre-commit": "^1.2.2",
     "prettier": "^2.8.8"
-  }
+  },
+  "pre-commit": "lint"
 }

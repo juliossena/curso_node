@@ -1,9 +1,5 @@
 import fs from 'fs';
-import { fileURLToPath } from 'url';
-import path, { dirname } from 'path';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+import path from 'path';
 
 export const routerLoader = (app) => {
   const modulesPath = path.join(__dirname, 'modules');
@@ -12,7 +8,7 @@ export const routerLoader = (app) => {
     const modulePath = path.join(modulesPath, dir);
 
     if (fs.statSync(modulePath).isDirectory()) {
-      const controllerPath = path.join(modulePath, `${dir}.controller.js`);
+      const controllerPath = path.join(modulePath, `${dir}.controller.ts`);
 
       if (fs.existsSync(controllerPath)) {
         const controller = await import(controllerPath);

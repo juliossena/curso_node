@@ -1,5 +1,5 @@
 import express from 'express';
-import { routerLoader } from './routerLoader.js';
+import { routerLoader } from './routerLoader';
 
 const app = express();
 

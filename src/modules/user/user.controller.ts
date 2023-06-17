@@ -24,7 +24,9 @@ router.get('/', async (_, res: Response): Promise<void> => {
 router.post(
   '/',
   async (req: Request<undefined, undefined, UserInsertDTO>, res: Response): Promise<void> => {
-    const user = await createUser(req.body);
+    const user = await createUser(req.body).catch((error) => {
+      new ReturnError(res, error);
+    });
     res.send(user);
   },
 );

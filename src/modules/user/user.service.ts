@@ -3,7 +3,7 @@ import { UserModel } from './user.model';
 import { UserInsertDTO } from './dtos/user-insert.dto';
 import { NotFoundException } from '@exceptions/not-found-exception';
 import { BadRequestException } from '@exceptions/bad-request-exception';
-import { createPasswordHashed } from 'src/utils/password';
+import { createPasswordHashed } from '@utils/password';
 
 const prisma = new PrismaClient();
 

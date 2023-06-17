@@ -18,6 +18,7 @@
     "paths": {
       "@modules/*": ["./src/modules/*"],
       "@exceptions/*": ["./src/exceptions/*"],
+      "@utils/*": ["./src/utils/*"],
     }
   }
 }

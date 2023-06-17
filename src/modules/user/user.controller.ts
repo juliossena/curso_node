@@ -3,7 +3,6 @@ import { createUser, getUsers } from './user.service';
 import { UserInsertDTO } from './dtos/user-insert.dto';
 import { NotFoundException } from '@exceptions/not-found-exception';
 import { ReturnError } from '@exceptions/dtos/return-error.dto';
-import { verifyToken } from '@utils/auth';
 import { authMiddleware } from 'src/middlewares/auth.middleware';
 
 const userRouter = Router();

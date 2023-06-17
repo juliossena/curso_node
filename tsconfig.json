@@ -17,6 +17,7 @@
     "baseUrl": ".",
     "paths": {
       "@modules/*": ["./src/modules/*"],
+      "@exceptions/*": ["./src/exceptions/*"],
     }
   }
 }

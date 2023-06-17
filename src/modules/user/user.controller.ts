@@ -14,15 +14,13 @@ userRouter.use('/user', router);
 router.get('/', async (req: Request, res: Response): Promise<void> => {
   const authorization = req.headers.authorization;
 
-  verifyToken(authorization).catch((error) => {
-    new ReturnError(res, error);
-  });
+  await verifyToken(authorization);
 
   const users = await getUsers().catch((error) => {
     if (error instanceof NotFoundException) {
       res.status(204);
     } else {
-      new ReturnError(res, error);
+      throw new Error(error);
     }
   });
   res.send(users);
@@ -31,9 +29,7 @@ router.get('/', async (req: Request, res: Response): Promise<void> => {
 router.post(
   '/',
   async (req: Request<undefined, undefined, UserInsertDTO>, res: Response): Promise<void> => {
-    const user = await createUser(req.body).catch((error) => {
-      new ReturnError(res, error);
-    });
+    const user = await createUser(req.body);
     res.send(user);
   },
 );

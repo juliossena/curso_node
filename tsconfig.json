@@ -19,6 +19,7 @@
       "@modules/*": ["./src/modules/*"],
       "@exceptions/*": ["./src/exceptions/*"],
       "@utils/*": ["./src/utils/*"],
+      "@middlewares/*": ["./src/middlewares/*"],
     }
   }
 }

@@ -1,7 +1,7 @@
 import { AppException } from './app-exception';
 
 export class InternalServerErrorException extends AppException {
-  constructor(message: string) {
-    super(message);
+  constructor() {
+    super('Internal server error');
   }
 }

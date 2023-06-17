@@ -2,7 +2,6 @@ import { PrismaClient } from '@prisma/client';
 import { UserModel } from './user.model';
 import { UserInsertDTO } from './dtos/user-insert.dto';
 import { NotFoundException } from '@exceptions/not-found-exception';
-import { InternalServerErrorException } from '@exceptions/internal-server-error-exception';
 
 const prisma = new PrismaClient();
 

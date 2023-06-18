@@ -4,7 +4,6 @@ import { UserInsertDTO } from './dtos/user-insert.dto';
 import { NotFoundException } from '@exceptions/not-found-exception';
 import { ReturnError } from '@exceptions/dtos/return-error.dto';
 import { authAdminMiddleware } from 'src/middlewares/auth-admin.middleware';
-import { UserModel } from './user.model';
 import { authMiddleware } from 'src/middlewares/auth.middleware';
 import { UserEditPasswordDTO } from './dtos/user-edit-password.dto';
 

@@ -4,15 +4,33 @@ datasource db {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
+  id        Int         @id @default(autoincrement())
   name      String
-  email     String   @unique
-  cpf       String   @unique
+  email     String      @unique
+  cpf       String      @unique
   phone     String
   password  String
   typeUser  Int
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+}
+
+model State {
+  id        Int         @id @default(autoincrement())
+  name      String      
+  uf        String
+  cities    City[]      @relation("StateToCity")
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+}
+
+model City {
+  id        Int         @id @default(autoincrement())
+  name      String
+  stateId   Int
+  state     State       @relation("StateToCity", fields: [stateId], references: [id])     
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
 }
 
 generator client {
